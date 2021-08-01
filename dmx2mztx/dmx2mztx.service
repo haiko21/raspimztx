@@ -1,0 +1,13 @@
+[Unit]
+Description=Copy Raspberry Pi screen to MZTX LCD
+
+[Service]
+Type=forking
+PIDFile=/var/run/dmx2mztx.pid
+ExecStart=/usr/bin/taskset -c 3 /usr/local/bin/dmx2mztx --daemon --pidfile /var/run/dmx2mztx.pid --fps 5
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
