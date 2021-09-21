@@ -12,8 +12,13 @@ cd bcm2835-1.68/
 make
 sudo make install
 
+
 sudo vi /boot/cmdline.txt
 # add to end: isolcpus=3
+
+
+sudo apt install git libbsd-dev
+
 
 cd ~/Build
 
